@@ -165,7 +165,7 @@ say no crawler sends, so a request using either name is forged wherever it comes
 ## Checks
 
 ```
-python -m pytest -q          # 70 tests, about 5 s, no network
+python -m pytest -q          # 71 tests, about 5 s, no network
 python scripts/smoke_e2e.py  # the test page, the watcher and a draft together, with live registry lookups
 ```
 
