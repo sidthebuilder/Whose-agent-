@@ -1,0 +1,838 @@
+{
+ "arin_originas0_originautnums": [],
+ "cidr0_cidrs": [
+  {
+   "v4prefix": "20.160.0.0",
+   "length": 12
+  }
+ ],
+ "endAddress": "20.175.255.255",
+ "entities": [
+  {
+   "entities": [
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2026-10-26T12:36:11-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2013-08-20T19:26:59-04:00"
+      }
+     ],
+     "handle": "MRPD-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/MRPD-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/MRPD-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "remarks": [
+      {
+       "description": [
+        "To report suspected security issues specific to \r",
+        "traffic emanating from Microsoft online services, \r",
+        "including the distribution of malicious content \r",
+        "or other illicit or illegal material through a \r",
+        "Microsoft online service, please submit reports \r",
+        "to:\r",
+        "* https://cert.microsoft.com.  \r",
+        "\r",
+        "For SPAM and other abuse issues, such as Microsoft \r",
+        "Accounts, please contact:\r",
+        "* abuse@microsoft.com.  \r",
+        "\r",
+        "To report security vulnerabilities in Microsoft \r",
+        "products and services, please contact:\r",
+        "* secure@microsoft.com.  \r",
+        "\r",
+        "For legal and law enforcement-related requests, \r",
+        "please contact:\r",
+        "* msndcc@microsoft.com\r",
+        "\r",
+        "For routing, peering or DNS issues, please \r",
+        "contact:\r",
+        "* IOC@microsoft.com"
+       ],
+       "title": "Registration Comments"
+      }
+     ],
+     "roles": [
+      "technical"
+     ],
+     "status": [
+      "validated"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "One Microsoft Way\nRedmond\nWA\n98052\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Microsoft Routing, Peering, and DNS"
+       ],
+       [
+        "org",
+        {},
+        "text",
+        "Microsoft Corporation"
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "group"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "IOC@microsoft.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-425-882-8080"
+       ]
+      ]
+     ]
+    },
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2023-07-11T19:59:19-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2023-06-13T16:28:52-04:00"
+      }
+     ],
+     "handle": "SINGH683-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/SINGH683-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/SINGH683-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "remarks": [
+      {
+       "description": [
+        "ARIN has attempted to validate the data for this POC, but has received no response from the POC since 2024-07-10"
+       ],
+       "title": "Unvalidated POC"
+      }
+     ],
+     "roles": [
+      "technical"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "1 Microsoft Way\nRedmond\nWA\n98052\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Prachi Singh"
+       ],
+       [
+        "n",
+        {},
+        "text",
+        [
+         "Singh",
+         "Prachi",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "individual"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "pracsin@microsoft.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-425-707-5601"
+       ]
+      ]
+     ]
+    },
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2026-10-22T18:49:57-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2021-10-13T17:30:13-04:00"
+      }
+     ],
+     "handle": "IPHOS5-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/IPHOS5-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/IPHOS5-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "roles": [
+      "administrative",
+      "technical"
+     ],
+     "status": [
+      "validated"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "One Microsoft Way\nRedmond\nWA\n20147\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "IPHostmaster IPHostmaster"
+       ],
+       [
+        "n",
+        {},
+        "text",
+        [
+         "IPHostmaster",
+         "IPHostmaster",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "individual"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "iphostmaster@microsoft.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-425-538-6637"
+       ]
+      ]
+     ]
+    },
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2025-08-19T10:44:04-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2016-10-20T15:51:33-04:00"
+      }
+     ],
+     "handle": "BEDAR6-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/BEDAR6-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/BEDAR6-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "roles": [
+      "technical"
+     ],
+     "status": [
+      "validated"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "1 Redmond Way\nRedmond\nWA\n98052\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Dawn Bedard"
+       ],
+       [
+        "n",
+        {},
+        "text",
+        [
+         "Bedard",
+         "Dawn",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "individual"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "dabedard@microsoft.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-425-538-6637"
+       ]
+      ]
+     ]
+    },
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2026-10-22T18:50:12-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2013-08-20T19:24:57-04:00"
+      }
+     ],
+     "handle": "MAC74-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/MAC74-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/MAC74-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "remarks": [
+      {
+       "description": [
+        "To report suspected security issues specific to traffic emanating from Microsoft Online Services, including the distribution of malicious content or other illicit or illegal material through a Microsoft Online Service, please submit reports to https://cert.microsoft.com.  \r",
+        "For SPAM and other abuse issues, such as Microsoft Accounts, please contact abuse@microsoft.com.  \r",
+        "To report security vulnerabilities in Microsoft products and services, please contact secure@microsoft.com.  \r",
+        "For legal and law enforcement-related requests, please contact msndcc@microsoft.com\r",
+        "For routing, peering or DNS issues, please contact IOC@microsoft.com"
+       ],
+       "title": "Registration Comments"
+      }
+     ],
+     "roles": [
+      "abuse"
+     ],
+     "status": [
+      "validated"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "One Microsoft Way\nRedmond\nWA\n98052\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Microsoft Abuse Contact"
+       ],
+       [
+        "org",
+        {},
+        "text",
+        "Microsoft Corporation"
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "group"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "abuse@microsoft.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-425-882-8080"
+       ]
+      ]
+     ]
+    },
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2026-04-10T19:08:09-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2023-06-13T16:26:16-04:00"
+      }
+     ],
+     "handle": "CHATU3-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/CHATU3-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/CHATU3-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "roles": [
+      "routing"
+     ],
+     "status": [
+      "validated"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "One Microsoft way\nRedmond\nWA\n98052\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Somesh Chaturmohta"
+       ],
+       [
+        "n",
+        {},
+        "text",
+        [
+         "Chaturmohta",
+         "Somesh",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "individual"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "someshch@microsoft.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-425-882-8080"
+       ]
+      ]
+     ]
+    }
+   ],
+   "events": [
+    {
+     "eventAction": "last changed",
+     "eventDate": "2025-06-10T13:41:34-04:00"
+    },
+    {
+     "eventAction": "registration",
+     "eventDate": "1998-07-10T00:00:00-04:00"
+    }
+   ],
+   "handle": "MSFT",
+   "links": [
+    {
+     "href": "https://rdap.arin.net/registry/entity/MSFT",
+     "rel": "self",
+     "type": "application/rdap+json",
+     "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+    },
+    {
+     "href": "https://whois.arin.net/rest/org/MSFT",
+     "rel": "alternate",
+     "type": "application/xml",
+     "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+    }
+   ],
+   "objectClassName": "entity",
+   "port43": "whois.arin.net",
+   "remarks": [
+    {
+     "description": [
+      "To report suspected security issues specific to traffic emanating from Microsoft online services, including the distribution of malicious content or other illicit or illegal material through a Microsoft online service, please submit reports to:\r",
+      "* https://cert.microsoft.com.  \r",
+      "\r",
+      "For SPAM and other abuse issues, such as Microsoft Accounts, please contact:\r",
+      "* abuse@microsoft.com.  \r",
+      "\r",
+      "To report security vulnerabilities in Microsoft products and services, please contact:\r",
+      "* secure@microsoft.com.  \r",
+      "\r",
+      "For legal and law enforcement-related requests, please contact:\r",
+      "* msndcc@microsoft.com\r",
+      "\r",
+      "For routing, peering or DNS issues, please \r",
+      "contact:\r",
+      "* IOC@microsoft.com"
+     ],
+     "title": "Registration Comments"
+    }
+   ],
+   "roles": [
+    "registrant"
+   ],
+   "vcardArray": [
+    "vcard",
+    [
+     [
+      "version",
+      {},
+      "text",
+      "4.0"
+     ],
+     [
+      "fn",
+      {},
+      "text",
+      "Microsoft Corporation"
+     ],
+     [
+      "adr",
+      {
+       "label": "One Microsoft Way\nRedmond\nWA\n98052\nUnited States"
+      },
+      "text",
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     [
+      "kind",
+      {},
+      "text",
+      "org"
+     ]
+    ]
+   ]
+  }
+ ],
+ "events": [
+  {
+   "eventAction": "last changed",
+   "eventDate": "2017-02-22T10:27:12-05:00"
+  },
+  {
+   "eventAction": "registration",
+   "eventDate": "2017-02-22T10:27:12-05:00"
+  }
+ ],
+ "handle": "NET-20-160-0-0-1",
+ "ipVersion": "v4",
+ "links": [
+  {
+   "href": "https://rdap.arin.net/registry/ip/20.160.0.0",
+   "rel": "self",
+   "type": "application/rdap+json",
+   "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+  },
+  {
+   "href": "https://whois.arin.net/rest/net/NET-20-160-0-0-1",
+   "rel": "alternate",
+   "type": "application/xml",
+   "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+  }
+ ],
+ "name": "MSFT",
+ "notices": [
+  {
+   "description": [
+    "By using the ARIN RDAP/Whois service, you are agreeing to the RDAP/Whois Terms of Use"
+   ],
+   "links": [
+    {
+     "href": "https://www.arin.net/resources/registry/whois/tou/",
+     "rel": "terms-of-service",
+     "type": "text/html",
+     "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+    }
+   ],
+   "title": "Terms of Service"
+  },
+  {
+   "description": [
+    "If you see inaccuracies in the results, please visit: "
+   ],
+   "links": [
+    {
+     "href": "https://www.arin.net/resources/registry/whois/inaccuracy_reporting/",
+     "rel": "inaccuracy-report",
+     "type": "text/html",
+     "value": "https://rdap.arin.net/registry/ip/20.171.206.10"
+    }
+   ],
+   "title": "Whois Inaccuracy Reporting"
+  },
+  {
+   "description": [
+    "Copyright 1997-2026, American Registry for Internet Numbers, Ltd."
+   ],
+   "title": "Copyright Notice"
+  }
+ ],
+ "objectClassName": "ip network",
+ "parentHandle": "NET-20-0-0-0-0",
+ "port43": "whois.arin.net",
+ "rdapConformance": [
+  "nro_rdap_profile_0",
+  "rdap_level_0",
+  "cidr0",
+  "arin_originas0"
+ ],
+ "startAddress": "20.160.0.0",
+ "status": [
+  "active"
+ ],
+ "type": "DIRECT ALLOCATION"
+}

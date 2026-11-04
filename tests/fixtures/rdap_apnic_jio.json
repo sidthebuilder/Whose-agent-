@@ -1,0 +1,352 @@
+{
+ "rdapConformance": [
+  "history_version_0",
+  "nro_rdap_profile_0",
+  "cidr0",
+  "rdap_level_0"
+ ],
+ "notices": [
+  {
+   "title": "Source",
+   "description": [
+    "Objects returned came from source",
+    "APNIC"
+   ]
+  },
+  {
+   "title": "Terms and Conditions",
+   "description": [
+    "This is the APNIC WHOIS Database query service. The objects are in RDAP format."
+   ],
+   "links": [
+    {
+     "value": "https://rdap.apnic.net/ip/49.36.10.1",
+     "rel": "terms-of-service",
+     "href": "http://www.apnic.net/db/dbcopyright.html",
+     "type": "text/html"
+    }
+   ]
+  },
+  {
+   "title": "Whois Inaccuracy Reporting",
+   "description": [
+    "If you see inaccuracies in the results, please visit: "
+   ],
+   "links": [
+    {
+     "value": "https://rdap.apnic.net/ip/49.36.10.1",
+     "rel": "inaccuracy-report",
+     "href": "https://www.apnic.net/manage-ip/using-whois/abuse-and-spamming/invalid-contact-form",
+     "type": "text/html"
+    }
+   ]
+  }
+ ],
+ "country": "IN",
+ "name": "RELIANCEJIO-IN",
+ "status": [
+  "active"
+ ],
+ "events": [
+  {
+   "eventAction": "registration",
+   "eventDate": "2010-10-27T03:29:49Z"
+  },
+  {
+   "eventAction": "last changed",
+   "eventDate": "2020-08-19T13:07:30Z"
+  }
+ ],
+ "links": [
+  {
+   "value": "https://rdap.apnic.net/ip/49.36.10.1",
+   "rel": "self",
+   "href": "https://rdap.apnic.net/ip/49.32.0.0/12",
+   "type": "application/rdap+json"
+  }
+ ],
+ "remarks": [
+  {
+   "description": [
+    "Reliance Jio Infocomm Limited"
+   ],
+   "title": "description"
+  },
+  {
+   "description": [
+    "--------------------------------------------------------",
+    "To report network abuse, please contact mnt-irt",
+    "For troubleshooting, please contact tech-c and admin-c",
+    "Report invalid contact via www.apnic.net/invalidcontact",
+    "--------------------------------------------------------"
+   ],
+   "title": "remarks"
+  }
+ ],
+ "entities": [
+  {
+   "roles": [
+    "abuse"
+   ],
+   "events": [
+    {
+     "eventAction": "registration",
+     "eventDate": "2016-03-09T23:56:30Z"
+    },
+    {
+     "eventAction": "last changed",
+     "eventDate": "2026-09-25T13:27:28Z"
+    }
+   ],
+   "links": [
+    {
+     "value": "https://rdap.apnic.net/ip/49.36.10.1",
+     "rel": "self",
+     "href": "https://rdap.apnic.net/entity/IRT-RELIANCEJIO-IN",
+     "type": "application/rdap+json"
+    }
+   ],
+   "remarks": [
+    {
+     "description": [
+      "ip.abuse@ril.com was validated on 2026-09-25"
+     ],
+     "title": "remarks"
+    }
+   ],
+   "handle": "IRT-RELIANCEJIO-IN",
+   "objectClassName": "entity",
+   "vcardArray": [
+    "vcard",
+    [
+     [
+      "version",
+      {},
+      "text",
+      "4.0"
+     ],
+     [
+      "fn",
+      {},
+      "text",
+      "IRT-RELIANCEJIO-IN"
+     ],
+     [
+      "kind",
+      {},
+      "text",
+      "group"
+     ],
+     [
+      "adr",
+      {
+       "label": "Reliance JIO INFOCOMM LTD GHANSOLI INDIA"
+      },
+      "text",
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     [
+      "email",
+      {},
+      "text",
+      "ip.abuse@ril.com"
+     ],
+     [
+      "email",
+      {
+       "pref": "1"
+      },
+      "text",
+      "ip.abuse@ril.com"
+     ]
+    ]
+   ]
+  },
+  {
+   "roles": [
+    "registrant"
+   ],
+   "events": [
+    {
+     "eventAction": "registration",
+     "eventDate": "2017-09-08T12:56:21Z"
+    },
+    {
+     "eventAction": "last changed",
+     "eventDate": "2023-09-05T02:15:41Z"
+    }
+   ],
+   "links": [
+    {
+     "value": "https://rdap.apnic.net/ip/49.36.10.1",
+     "rel": "self",
+     "href": "https://rdap.apnic.net/entity/ORG-RJIL1-AP",
+     "type": "application/rdap+json"
+    }
+   ],
+   "handle": "ORG-RJIL1-AP",
+   "objectClassName": "entity",
+   "vcardArray": [
+    "vcard",
+    [
+     [
+      "version",
+      {},
+      "text",
+      "4.0"
+     ],
+     [
+      "fn",
+      {},
+      "text",
+      "Reliance Jio Infocomm Limited"
+     ],
+     [
+      "kind",
+      {},
+      "text",
+      "org"
+     ],
+     [
+      "adr",
+      {
+       "label": "Reliance Coporate IT park LTD\nGhansoli NaviMumbai"
+      },
+      "text",
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     [
+      "tel",
+      {
+       "type": "voice"
+      },
+      "text",
+      "+912279670000"
+     ],
+     [
+      "tel",
+      {
+       "type": "fax"
+      },
+      "text",
+      "+912279610099"
+     ],
+     [
+      "email",
+      {},
+      "text",
+      "ip.management@ril.com"
+     ]
+    ]
+   ]
+  },
+  {
+   "roles": [
+    "technical",
+    "administrative"
+   ],
+   "events": [
+    {
+     "eventAction": "registration",
+     "eventDate": "2016-03-09T23:47:43Z"
+    },
+    {
+     "eventAction": "last changed",
+     "eventDate": "2016-03-09T23:55:07Z"
+    }
+   ],
+   "links": [
+    {
+     "value": "https://rdap.apnic.net/ip/49.36.10.1",
+     "rel": "self",
+     "href": "https://rdap.apnic.net/entity/RJIL1-AP",
+     "type": "application/rdap+json"
+    }
+   ],
+   "handle": "RJIL1-AP",
+   "objectClassName": "entity",
+   "vcardArray": [
+    "vcard",
+    [
+     [
+      "version",
+      {},
+      "text",
+      "4.0"
+     ],
+     [
+      "fn",
+      {},
+      "text",
+      "Reliance Jio Infocomm Limited"
+     ],
+     [
+      "kind",
+      {},
+      "text",
+      "group"
+     ],
+     [
+      "adr",
+      {
+       "label": "Reliance JIO INFOCOMM LTD GHANSOLI INDIA"
+      },
+      "text",
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     [
+      "tel",
+      {
+       "type": "voice"
+      },
+      "text",
+      "+91-44770000"
+     ],
+     [
+      "email",
+      {},
+      "text",
+      "ip.management@ril.com"
+     ]
+    ]
+   ]
+  }
+ ],
+ "handle": "49.32.0.0 - 49.47.255.255",
+ "type": "ALLOCATED PORTABLE",
+ "startAddress": "49.32.0.0",
+ "endAddress": "49.47.255.255",
+ "objectClassName": "ip network",
+ "ipVersion": "v4",
+ "cidr0_cidrs": [
+  {
+   "v4prefix": "49.32.0.0",
+   "length": 12
+  }
+ ],
+ "port43": "whois.apnic.net"
+}

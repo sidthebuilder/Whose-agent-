@@ -1,0 +1,272 @@
+{
+ "arin_originas0_originautnums": [],
+ "cidr0_cidrs": [
+  {
+   "v4prefix": "160.79.104.0",
+   "length": 21
+  }
+ ],
+ "endAddress": "160.79.111.255",
+ "entities": [
+  {
+   "entities": [
+    {
+     "events": [
+      {
+       "eventAction": "last changed",
+       "eventDate": "2026-08-18T02:54:11-04:00"
+      },
+      {
+       "eventAction": "registration",
+       "eventDate": "2023-07-31T16:45:12-04:00"
+      }
+     ],
+     "handle": "ANTHR5-ARIN",
+     "links": [
+      {
+       "href": "https://rdap.arin.net/registry/entity/ANTHR5-ARIN",
+       "rel": "self",
+       "type": "application/rdap+json",
+       "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+      },
+      {
+       "href": "https://whois.arin.net/rest/poc/ANTHR5-ARIN",
+       "rel": "alternate",
+       "type": "application/xml",
+       "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+      }
+     ],
+     "objectClassName": "entity",
+     "port43": "whois.arin.net",
+     "roles": [
+      "administrative",
+      "routing",
+      "dns",
+      "abuse",
+      "noc",
+      "technical"
+     ],
+     "status": [
+      "validated"
+     ],
+     "vcardArray": [
+      "vcard",
+      [
+       [
+        "version",
+        {},
+        "text",
+        "4.0"
+       ],
+       [
+        "adr",
+        {
+         "label": "548 Market St.\nPMB 90375\nSan Francisco\nCA\n94104-5401\nUnited States"
+        },
+        "text",
+        [
+         "",
+         "",
+         "",
+         "",
+         "",
+         "",
+         ""
+        ]
+       ],
+       [
+        "fn",
+        {},
+        "text",
+        "Anthropic"
+       ],
+       [
+        "org",
+        {},
+        "text",
+        "Anthropic, PBC"
+       ],
+       [
+        "kind",
+        {},
+        "text",
+        "group"
+       ],
+       [
+        "email",
+        {},
+        "text",
+        "arin@anthropic.com"
+       ],
+       [
+        "tel",
+        {
+         "type": [
+          "work",
+          "voice"
+         ]
+        },
+        "text",
+        "+1-415-236-0599"
+       ]
+      ]
+     ]
+    }
+   ],
+   "events": [
+    {
+     "eventAction": "last changed",
+     "eventDate": "2023-08-22T17:10:25-04:00"
+    },
+    {
+     "eventAction": "registration",
+     "eventDate": "2023-07-31T16:51:11-04:00"
+    }
+   ],
+   "handle": "AP-2440",
+   "links": [
+    {
+     "href": "https://rdap.arin.net/registry/entity/AP-2440",
+     "rel": "self",
+     "type": "application/rdap+json",
+     "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+    },
+    {
+     "href": "https://whois.arin.net/rest/org/AP-2440",
+     "rel": "alternate",
+     "type": "application/xml",
+     "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+    }
+   ],
+   "objectClassName": "entity",
+   "port43": "whois.arin.net",
+   "roles": [
+    "registrant"
+   ],
+   "vcardArray": [
+    "vcard",
+    [
+     [
+      "version",
+      {},
+      "text",
+      "4.0"
+     ],
+     [
+      "fn",
+      {},
+      "text",
+      "Anthropic, PBC"
+     ],
+     [
+      "adr",
+      {
+       "label": "548 Market St.\nPMB 90375\nSan Francisco\nCA\n94104-5401\nUnited States"
+      },
+      "text",
+      [
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     [
+      "kind",
+      {},
+      "text",
+      "org"
+     ]
+    ]
+   ]
+  }
+ ],
+ "events": [
+  {
+   "eventAction": "last changed",
+   "eventDate": "2025-01-23T16:19:08-05:00"
+  },
+  {
+   "eventAction": "registration",
+   "eventDate": "2023-09-14T19:00:59-04:00"
+  }
+ ],
+ "handle": "NET-160-79-104-0-1",
+ "ipVersion": "v4",
+ "links": [
+  {
+   "href": "https://rdap.arin.net/registry/ip/160.79.104.0",
+   "rel": "self",
+   "type": "application/rdap+json",
+   "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+  },
+  {
+   "href": "https://whois.arin.net/rest/net/NET-160-79-104-0-1",
+   "rel": "alternate",
+   "type": "application/xml",
+   "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+  }
+ ],
+ "name": "AP-2440",
+ "notices": [
+  {
+   "description": [
+    "By using the ARIN RDAP/Whois service, you are agreeing to the RDAP/Whois Terms of Use"
+   ],
+   "links": [
+    {
+     "href": "https://www.arin.net/resources/registry/whois/tou/",
+     "rel": "terms-of-service",
+     "type": "text/html",
+     "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+    }
+   ],
+   "title": "Terms of Service"
+  },
+  {
+   "description": [
+    "If you see inaccuracies in the results, please visit: "
+   ],
+   "links": [
+    {
+     "href": "https://www.arin.net/resources/registry/whois/inaccuracy_reporting/",
+     "rel": "inaccuracy-report",
+     "type": "text/html",
+     "value": "https://rdap.arin.net/registry/ip/160.79.104.10"
+    }
+   ],
+   "title": "Whois Inaccuracy Reporting"
+  },
+  {
+   "description": [
+    "Copyright 1997-2026, American Registry for Internet Numbers, Ltd."
+   ],
+   "title": "Copyright Notice"
+  }
+ ],
+ "objectClassName": "ip network",
+ "parentHandle": "NET-160-0-0-0-0",
+ "port43": "whois.arin.net",
+ "rdapConformance": [
+  "nro_rdap_profile_0",
+  "rdap_level_0",
+  "cidr0",
+  "arin_originas0"
+ ],
+ "remarks": [
+  {
+   "description": [
+    "-----BEGIN CERTIFICATE-----MIIDbTCCAlWgAwIBAgIUA3T3Jl6gHAs0TEUClZcfBqfFG9YwDQYJKoZIhvcNAQELBQAwRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAgFw0yNTAxMjMyMTE3NTNaGA8yMTI0MTIzMDIxMTc1M1owRTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALqTjOlO8jEiAwzfx2Dpy1EnEcyCxt+zFyLRvYSJDyt5PV4yav4+P4bi1WYBRrD/QhzwWESSIZWKTBYobB6fj555SXYJZ39Io6PIMjjcJdUasdbsCoGLZJ1VaxBQw9Vv0jLrcPNiUy2AXjrvNatvaIDWkDYGaMQT8TcLi/J3GANVdQRu3m6karCuamVIQCZaS56/TrGi2k11vbLEbW77pERLPbLoIJAP11sMPGTqOVT+DKV+VpEZlcgnxLrcKhyH5LgjtwFV0QdWGxV3AkkdHtdtsNuyb2ILHuAXeFXkOnffbmjS6M2cUM5dAKaJmxzF3jpVkejNwDkcgwgcYPZBsnUCAwEAAaNTMFEwHQYDVR0OBBYEFIQf7TfL3rg4BudFeBIMvuitVTqVMB8GA1UdIwQYMBaAFIQf7TfL3rg4BudFeBIMvuitVTqVMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAFeaB6a+jlh1PK0rQcygOdA11dmrYNlQLS8mh2M9X93vlvg+f0dRMkmVit8nnNugWP177s1dVONxA6Mzecsq3S/n9ejaO2qKS/jZVjG3BF9cOIivkR4vLph1509gqD8oUIrBrVJESrlrFaOtUjJFn1Mbl2wI1Uq+5r4HOOV+xJekZCcpZvsyndI1KWqIS/Xs360+SOADZukfY2cxsG4WZ5DlZkAkPhb3VRM28M3runkbv8/TYpx0Xti/ALJRJdqGz40EStv43mTonxF3xyKuaQV4Svrfs/YyC4KdzTtGBLNETvhvkHQe+BexuNWcZdhK7VKB57+3ybIN8bOxF+Bv28s=-----END CERTIFICATE-----"
+   ],
+   "title": "Registration Comments"
+  }
+ ],
+ "startAddress": "160.79.104.0",
+ "status": [
+  "active"
+ ],
+ "type": "DIRECT ALLOCATION"
+}

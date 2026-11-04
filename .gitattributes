@@ -1,0 +1,5 @@
+# Keep the raw list files and the registry answers byte for byte, so their SHA-256 hashes match the manifest
+# on every machine.
+data/snapshot-2026-10-31/** -text
+data/live/raw/** -text
+tests/fixtures/** -text

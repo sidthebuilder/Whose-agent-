@@ -1,0 +1,16 @@
+{
+  "_about": "Contact addresses the operators publish for questions about their bots, checked on 4 November 2026. Only addresses we could read on the operator's own page or in its bot's own user agent are listed. An operator missing here publishes none we could find (OpenAI's bots page, developers.openai.com/api/docs/bots, lists user agents and IP files but no contact address); reports about its traffic go to the network's abuse contact from the registry (RDAP).",
+  "Apple": {
+    "contact": "applebot@apple.com",
+    "source": "https://support.apple.com/en-us/119829",
+    "evidence": "Applebot help page: 'If you have questions or concerns, please contact us at applebot@apple.com.'",
+    "checked": "2026-11-04"
+  },
+  "Anthropic": {
+    "contact": "claudebot@anthropic.com",
+    "source": "ClaudeBot's user agent string, and https://privacy.claude.com/en/articles/8896518",
+    "evidence": "ClaudeBot identifies itself as 'ClaudeBot/1.0; +claudebot@anthropic.com'. Anthropic's crawler page asks site owners who believe its bots are malfunctioning to email it (the address is hidden by email protection in the page text).",
+    "send_note": "Anthropic asks that reports come from an email address at the domain you are reporting about, so it can verify them.",
+    "checked": "2026-11-04"
+  }
+}

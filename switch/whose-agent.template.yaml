@@ -1,0 +1,122 @@
+# Whose agent is this? A room where a website's operations team and two agents work out whose AI agents are
+# visiting the site, from the IP lists the operators publish and the regional registries, and draft the report
+# when one misbehaves. A person approves every report and sends it; no agent can.
+#
+# Use it in Switch Console: Templates, then "Use a template", and paste this file. Switch creates both agents,
+# the room with you in it, and posts the kickoff. Template language: docs/TEMPLATES.md in sandbox-quantum/switch.
+version: 1
+params:
+  team:
+    type: string
+    label: Team name
+    description: Lowercase letters, digits and hyphens. Used in the agent and room names.
+    default: site
+    pattern: "^[a-z0-9][a-z0-9-]{0,30}$"
+  site:
+    type: string
+    label: Your website
+    description: The site the reports speak for, for example wiki.example.org.
+    default: our website
+  repo_dir:
+    type: string
+    label: Where you cloned whose-agent
+    description: The full path of your clone, for example C:/code/whose-agent. Each agent works in its own folder under agents/.
+  bridge:
+    type: bridge
+    default: [Mattermost, $first]
+  provider:
+    type: provider
+    default: [claude, codex, opencode]
+    input: advanced
+  location:
+    type: location
+    default: local
+    input: advanced
+
+agents:
+  - name: "{team}-egress-check"
+    display_name: "{team}-egress-check"
+    description: Works out whose AI agent sent a request, from the IP lists that 9 AI operators publish and the regional internet registries. Answers questions about addresses and logs.
+    provider: "{provider}"
+    location: "{location}"
+    directory: "{repo_dir}/agents/egress-check"
+    addressing: anyone
+    instructions: |
+      You are the analyst in the {team}-whose-agent room. Your folder holds AGENTS.md with your commands and
+      rules; read it first. Every fact you state comes from a `python ../../wa.py` command you ran. When a
+      request needs a report, mention @{team}-abuse-writer with the log path and the line number.
+  - name: "{team}-abuse-writer"
+    display_name: "{team}-abuse-writer"
+    description: Drafts the report to the operator or network behind a misbehaving agent. Never sends; a person approves and sends.
+    provider: "{provider}"
+    location: "{location}"
+    directory: "{repo_dir}/agents/abuse-writer"
+    addressing: anyone
+    instructions: |
+      You draft reports in the {team}-whose-agent room for {site}. Your folder holds AGENTS.md with your
+      commands and rules; read it first. You never send email. Only a person approves a report, by replying
+      `approve <id>`.
+
+room:
+  name: "{team}-whose-agent"
+  description: Whose AI agents are visiting {site}, checked against the operators' published IP lists, with reports a person approves.
+  bridge: "{bridge}"
+  channel_type: channel_private
+  agents: ["{team}-egress-check", "{team}-abuse-writer"]
+  users: ["{$creator}"]
+  instructions: |
+    This room works out whose AI agents are visiting {site}, and reports the ones that misbehave.
+
+    Who does what:
+    - A log watcher posts each request that names an AI agent, comes from an address an AI operator publishes,
+      or raises a flag. It posts in {team}-egress-check's name.
+    - {team}-egress-check answers questions about addresses, logs and the published lists, from its tools.
+      When a request needs a report it hands it to {team}-abuse-writer.
+    - {team}-abuse-writer drafts the report: the recipients, the evidence and the request. It never sends it.
+    - A person in this room approves each report by replying `approve <id>`, then sends it from their own mail.
+      No agent approves a report or sends email.
+
+    For every agent here:
+    - Every fact comes from a `python ../../wa.py` command: operators, lists, address ranges, registry holders,
+      email addresses and counts. If no command printed it, don't say it.
+    - Quote log lines exactly as written.
+    - A bot name in a user agent is a claim. Only the address check counts.
+    - Reply in the thread of the message you answer, in a few lines. Say plainly when something failed.
+  docs:
+    - name: verdicts
+      description: What each verdict and flag means, and what the team does about it.
+      instructions: Read this before explaining a verdict or deciding whether a request needs a report.
+      content: |
+        # Verdicts
+
+        Each request is checked two ways: the name it gives (a bot token in the user agent, such as GPTBot,
+        which anyone can type) and the address it came from, against every IP list the AI operators publish.
+
+        | Verdict | Meaning | What we do |
+        |---|---|---|
+        | Verified | Names operator X; the address is in one of X's lists | Nothing, unless it writes |
+        | Claimed, not declared | Names X; the address is in none of X's lists | Report to the network's abuse contact, copy X if it publishes a contact |
+        | Declared by another operator | Names X; operator Y publishes the address | Ask Y |
+        | Declared address, no bot name | No bot name; an operator publishes the address | Attribute it to that operator |
+        | Undeclared | No bot name; no operator publishes the address | Nothing: a person, or an agent whose operator publishes nothing |
+
+        | Flag | Meaning |
+        |---|---|
+        | WRITE | POST, PUT, PATCH, DELETE, or a GET that edits |
+        | WRITE-FROM-CRAWLER | A write from a range declared only for crawlers: crawlers never need to write. Report it |
+        | RESEARCH-RANGE | A range declared for research or evaluation runs. Report it within 24 hours |
+        | SECRET-PATH | A request for a credentials file such as /.env. Check the file is not reachable, and report it |
+        | SIGNED | The request carried a Web Bot Auth Signature-Agent header (recorded, not verified) |
+
+        Google-Extended and Applebot-Extended are robots.txt tokens: Google and Apple say no crawler sends them
+        as a user agent, so a request using either name is forged wherever it comes from.
+
+        A report goes out only after a person replies `approve <id>`, and that person sends it.
+
+kickoff: |
+  @{team}-egress-check @{team}-abuse-writer this is the agent-traffic room for {site}.
+
+  @{team}-egress-check: run `python ../../wa.py lists` and say in two lines how many lists you check
+  against, from how many operators, and how many are undated or over 30 days old.
+
+  @{team}-abuse-writer: say in one line what you do, and that a person approves and sends every report.

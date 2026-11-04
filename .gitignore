@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# what the test page and the watcher record on your machine: real visitor addresses
+logs/
+# report drafts
+outbox/
+# agent credentials written by Switch Console
+.switch/
