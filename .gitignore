@@ -10,3 +10,5 @@ logs/
 outbox/
 # agent credentials written by Switch Console
 .switch/
+# downloaded tools such as cloudflared.exe
+tools/

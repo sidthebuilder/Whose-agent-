@@ -165,9 +165,12 @@ say no crawler sends, so a request using either name is forged wherever it comes
 ## Checks
 
 ```
-python -m pytest -q          # 71 tests, about 5 s, no network
-python scripts/smoke_e2e.py  # the test page, the watcher and a draft together, with live registry lookups
+python -m pytest -q                # 71 tests, about 5 s, no network
+python scripts/verify_snapshot.py  # every raw list file still has the SHA-256 recorded when it was fetched
+python scripts/smoke_e2e.py        # the test page, the watcher and a draft together, with live registry lookups
 ```
+
+A fresh clone passes all three; `.gitattributes` keeps the raw files byte for byte on Windows too.
 
 The tests run against the real 31 October snapshot and real RDAP answers saved in `tests/fixtures/`. They cover
 each verdict and flag with addresses taken from the published lists, the registry parsing for ARIN and APNIC,
