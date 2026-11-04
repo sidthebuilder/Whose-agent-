@@ -163,7 +163,7 @@ def cmd_check(a) -> None:
 
 
 def cmd_watch(a) -> None:
-    from .switch import SwitchClient, SwitchError, load_credentials
+    from .switch import SwitchError
     from .watch import Watcher, follow
 
     log = _resolve(a.log)
@@ -174,7 +174,7 @@ def cmd_watch(a) -> None:
         where = "this terminal (dry run)"
     else:
         try:
-            client = SwitchClient(load_credentials(a.agent_dir, a.agent_name))
+            client = _client(a)
             room_id = a.room_id or client.find_room(a.room)
         except SwitchError as e:
             sys.exit(str(e))
@@ -355,20 +355,26 @@ def cmd_redact(a) -> None:
           f"addresses in published AI lists kept. Written to {a.out}.")
 
 
+def _client(a):
+    """A Switch client with the credentials of the agent whose folder is given (as written, or relative to the
+    repository), or from the SWITCH_* environment variables."""
+    from .switch import SwitchClient, load_credentials
+    return SwitchClient(load_credentials(_resolve(a.agent_dir) if a.agent_dir else None, a.agent_name))
+
+
 def cmd_rooms(a) -> None:
-    from .switch import SwitchClient, SwitchError, load_credentials
+    from .switch import SwitchError
     try:
-        client = SwitchClient(load_credentials(a.agent_dir, a.agent_name))
-        rooms = client.rooms()
+        rooms = _client(a).rooms()
     except SwitchError as e:
         sys.exit(str(e))
     _print(rooms, a.json, "\n".join(f"{r['id']}  {r['name']}" for r in rooms) or "This agent is in no room.")
 
 
 def cmd_post(a) -> None:
-    from .switch import SwitchClient, SwitchError, load_credentials
+    from .switch import SwitchError
     try:
-        client = SwitchClient(load_credentials(a.agent_dir, a.agent_name))
+        client = _client(a)
         client.post(a.room_id or client.find_room(a.room), a.text)
     except SwitchError as e:
         sys.exit(str(e))

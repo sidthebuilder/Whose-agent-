@@ -57,6 +57,13 @@ def test_check_draft_approve(capsys, log, rdap_cache):
         main(["approve", d["id"], "--by", "Someone else"])
 
 
+def test_switch_commands_explain_missing_credentials(tmp_path):
+    with pytest.raises(SystemExit, match="found 0"):
+        main(["rooms", "--agent-dir", str(tmp_path)])
+    with pytest.raises(SystemExit, match="No Switch credentials"):
+        main(["post", "hello", "--room", "site-whose-agent"])
+
+
 def test_draft_rejects_a_line_that_is_not_a_request(log):
     with pytest.raises(SystemExit, match="Line 9"):
         main(["draft", str(log), "--line", "9", "--offline"])
