@@ -44,7 +44,7 @@ PAGE = """<!doctype html>
 <body style="font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; line-height: 1.5">
 <h1>whose-agent test page</h1>
 <p>This page is part of an open experiment that checks whether AI assistants fetch web pages from the
-addresses their operators publish: <a href="https://github.com/sidthebuilder/whose-agent">github.com/sidthebuilder/whose-agent</a>.</p>
+addresses their operators publish: <a href="https://github.com/sidthebuilder/Whose-agent-">github.com/sidthebuilder/Whose-agent-</a>.</p>
 <p>Every request to this page is logged: the time, the IP address, the user agent and a few request headers.
 Nothing else is collected.</p>
 <p>The verification word for this page is <strong>{word}</strong>.</p>

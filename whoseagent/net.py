@@ -10,7 +10,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-UA = "Mozilla/5.0 (compatible; whoseagent/0.1; +https://github.com/sidthebuilder/whose-agent)"
+UA = "Mozilla/5.0 (compatible; whoseagent/0.1; +https://github.com/sidthebuilder/Whose-agent-)"
 
 
 def http_get(url: str, timeout: int = 30, accept: str = "application/json, */*") -> dict:

@@ -8,7 +8,17 @@ __pycache__/
 logs/
 # report drafts
 outbox/
+# registry answers cached on your machine (they would show which networks you looked up)
+cache/
+# local secrets: the Switch stack's .env and the model endpoint key
+.env
+switch/stack/.env
 # agent credentials written by Switch Console
 .switch/
 # downloaded tools such as cloudflared.exe
 tools/
+# the demo video: browser sign-in, recordings and generated speech
+demo/.profile/
+demo/.profile-rehearsal/
+demo/out/
+demo/voice/

@@ -193,12 +193,20 @@ exists, and every command the agents are told to run exists.
 - The watcher posts the full address of requests that name an AI agent or come from a published range. Use
   `--redact` to show undeclared addresses as their /24 or /48 in the room.
 
-## Credits and disclosure
+## How this was made
+
+- **Direction: me, Shashank Kumar.** I chose the problem, the data sources and the workflow, designed how the
+  room works, and decided what to build and what to leave out at each step.
+- **Work: Kiro (Claude), an AI coding assistant, under my direction.** It wrote the code, the tests, the
+  agents' instructions, the Switch room setup, the website and the video scripts.
+- **Checking: me.** I re-checked all of the work: I ran the tests and the end-to-end check, read the code and
+  the agents' instructions, and checked the figures against the published lists, the registries and the
+  operators' own pages.
+
+## Credits
 
 - The list data and the range-file parser come from my earlier project, the
   [Registry Scorecard](https://github.com/sidthebuilder/declared-egress) (MIT). The Switch room, the agents, the
   watcher, the classifier, the report drafts, the test page and the tests were written for this hackathon.
-- I used Kiro (Claude) as a coding assistant. I chose the workflow and the data sources, and checked the
-  results.
 - Licence: MIT. The published lists belong to their operators; registry data comes from the RIRs' public RDAP
   services.

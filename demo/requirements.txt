@@ -1,0 +1,4 @@
+# Only for making the demo video; whoseagent itself needs nothing beyond Python 3.11.
+edge-tts>=6.1
+playwright>=1.45
+imageio-ffmpeg>=0.5
