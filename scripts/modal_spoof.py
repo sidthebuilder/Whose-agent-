@@ -6,6 +6,9 @@ servers that call themselves AI crawlers. The requests come from a real cloud ad
   python -m modal run scripts/modal_spoof.py --url https://<tunnel>/ --case all      every case below, in order
 
 It runs on a small CPU container (no GPU) for a few seconds. Only send it to a page you run yourself.
+scripts/record_demo.py deploys it (python -m modal deploy scripts/modal_spoof.py) and calls the deployed function,
+which answers in a few seconds instead of the 15 to 20 that `modal run` takes to start; a container stays up
+for 5 minutes after a call, which costs a fraction of a cent.
 """
 import modal
 
@@ -23,7 +26,8 @@ CASES = {  # name: (method, path, user agent)
 app = modal.App("whose-agent-spoof")
 
 
-@app.function(image=modal.Image.debian_slim(python_version="3.12"), timeout=120, cpu=0.25, memory=256)
+@app.function(image=modal.Image.debian_slim(python_version="3.12"), timeout=120, cpu=0.25, memory=256,
+              scaledown_window=300)
 def fetch(base: str, cases: list[str]) -> list[dict]:
     import time
     import urllib.error

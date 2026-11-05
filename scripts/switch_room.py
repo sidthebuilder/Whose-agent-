@@ -26,6 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "scripts"))
 from whoseagent.gateway import Gateway, GatewayError  # noqa: E402
 
 STACK = ROOT / "switch" / "stack"
@@ -153,6 +154,8 @@ def setup(site: str) -> None:
 
 
 def reset() -> None:
+    from mm import Mattermost, MattermostError  # scripts/mm.py
+
     env = stack_env()
     g = Gateway()
     g.login(env["GATEWAY_ADMIN_EMAIL"], env["GATEWAY_ADMIN_PASSWORD"])
@@ -164,6 +167,15 @@ def reset() -> None:
             gone += 1
     if not gone:
         print("no room to delete")
+    # Deleting the room leaves its Mattermost channel behind; archive it so a new room doesn't sit next to an
+    # old channel of the same name in everyone's sidebar
+    try:
+        m = Mattermost(env)
+        m.login_admin()
+        for name in m.archive_channels_named(f"{TEAM}-whose-agent"):
+            print(f"archived the Mattermost channel {name}")
+    except MattermostError as e:
+        print(f"could not archive the old Mattermost channel: {e}")
     STATE.unlink(missing_ok=True)
 
 

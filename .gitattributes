@@ -5,3 +5,5 @@ data/live/raw/** -text
 tests/fixtures/** -text
 # the captured log is quoted in reports exactly as the server wrote it
 examples/*.log -text
+# Windows batch files need CRLF line endings
+*.bat text eol=crlf

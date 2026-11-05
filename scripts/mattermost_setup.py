@@ -3,7 +3,8 @@
   python scripts/mattermost_setup.py ["Your Name"]
 
 - turns off collapsed reply threads, so the agents' replies (posted in threads) show in the channel itself
-- turns off the first-run tips for the person's account
+- turns off the first-run tips for the person's account, the "open this in the desktop app?" page, the
+  "email notifications have not been configured" banner, and link previews (the reports contain many links)
 - sets the person's full name, if you give one (Mattermost here shows full names)
 
 Signs in with the admin account from switch/stack/.env; nothing secret is printed.
@@ -44,10 +45,15 @@ def main() -> None:
     token = headers.get("Token") or headers.get("token")
     if not token:
         sys.exit("Mattermost accepted the admin login but returned no session token")
-    cfg, _ = call("PUT", "/config/patch", {"ServiceSettings": {"CollapsedThreads": "disabled",
-                                                               "EnableTutorial": False}}, token)
-    print(f"collapsed reply threads: {cfg['ServiceSettings']['CollapsedThreads']}; "
-          f"tutorial: {cfg['ServiceSettings'].get('EnableTutorial')}")
+    cfg, _ = call("PUT", "/config/patch", {
+        "ServiceSettings": {"CollapsedThreads": "disabled", "EnableTutorial": False,
+                            "EnableDesktopLandingPage": False, "EnableLinkPreviews": False},
+        "EmailSettings": {"EnablePreviewModeBanner": False},
+        "TeamSettings": {"ExperimentalViewArchivedChannels": False}}, token)
+    s = cfg["ServiceSettings"]
+    print(f"collapsed reply threads: {s['CollapsedThreads']}; tutorial: {s.get('EnableTutorial')}; "
+          f"'open in the desktop app?' page: {s.get('EnableDesktopLandingPage')}; link previews: "
+          f"{s.get('EnableLinkPreviews')}; preview-mode banner: {cfg['EmailSettings'].get('EnablePreviewModeBanner')}")
     person = ENV.get("MATTERMOST_USER", "shashank")
     user, _ = call("GET", f"/users/username/{person}", token=token)
     if full:

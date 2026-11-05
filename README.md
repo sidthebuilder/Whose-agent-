@@ -342,6 +342,7 @@ The model in the run above was Qwen2.5-72B-Instruct (AWQ) served by vLLM on one 
 | `scripts/modal_llm_setup.py` | deploy the model server on Modal and write `.env` |
 | `scripts/smoke_e2e.py` | the test page, the watcher and a draft together, without Switch |
 | `scripts/verify_snapshot.py` | every raw list file still has the SHA-256 recorded when it was fetched |
+| `START_DEMO.bat` (`scripts/record_demo.py`) | the demo video: runs the room live in Edge, types the person's messages, speaks the narration and records the screen (needs `demo/requirements.txt` and Modal) |
 
 [`scripts/explore/`](scripts/explore/) has the one-off scripts used to work out Switch's API.
 
