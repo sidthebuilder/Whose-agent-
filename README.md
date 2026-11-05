@@ -8,7 +8,7 @@ Built for Flip the Switch (WeMakeDevs × DevTools Academy × Switch, 4 to 7 Nove
 Business Workflow.
 
 - [Try it in 2 minutes](#try-it-in-2-minutes): Python only, no accounts
-- [Run the whole room](#run-the-whole-room): Switch, Mattermost and both agents on your machine, about 15 minutes
+- [Run the whole room](#run-the-whole-room): Switch, Mattermost and both agents on your machine, with Docker
 - [What the room did on 5 November 2026](#what-the-room-did-on-5-november-2026): real messages from a real run
 
 ## The problem
@@ -151,7 +151,7 @@ from a cloud machine.
 
 **1. Start Switch.** This downloads Switch's own compose file for version 0.31.0 (the Switch server, its
 database, a Mattermost and the dashboard), creates random passwords in `switch/stack/.env` and waits until
-everything is up.
+everything is up. The first start also downloads the Docker images, which takes a while.
 
 ```
 python scripts/switch_stack.py up
