@@ -10,9 +10,12 @@ logs/
 outbox/
 # registry answers cached on your machine (they would show which networks you looked up)
 cache/
-# local secrets: the Switch stack's .env and the model endpoint key
+# local secrets: the model endpoint key, and the Switch stack folder that
+# scripts/switch_stack.py fills in (the server's .env with its passwords, its
+# compose file, which is Switch's and is downloaded rather than copied here,
+# and the ids of the room it made)
 .env
-switch/stack/.env
+switch/stack/
 # agent credentials written by Switch Console
 .switch/
 # downloaded tools such as cloudflared.exe

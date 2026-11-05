@@ -10,7 +10,8 @@ can check that the assistant really read the copy this server sent, and it has a
 agents that write. Form contents are not stored, only their length and hash.
 
 Security: it binds to 127.0.0.1 by default, serves no files, reads at most 64 KB of any body, and trusts the
-CF-Connecting-IP / X-Forwarded-For headers only when the connection comes from this machine (the tunnel).
+headers a tunnel uses for the client's address (CF-Connecting-IP, X-Forwarded-For, X-Real-IP, Forwarded) only
+when the connection comes from this machine (the tunnel).
 """
 from __future__ import annotations
 
@@ -31,9 +32,15 @@ from .logparse import format_line
 
 MAX_BODY = 64 * 1024
 LABEL = re.compile(r"^/t/([a-z0-9][a-z0-9_-]{0,39})(/note)?/?$")
+# (not Forwarded or X-Forwarded-Host: they carry the tunnel's own address, which for some tunnels contains the
+# public IP address of the machine running this page)
 KEEP_HEADERS = ("user-agent", "accept", "accept-language", "from", "referer", "signature", "signature-input",
                 "signature-agent", "cf-connecting-ip", "cf-ipcountry", "cf-ray", "x-forwarded-for",
-                "x-forwarded-proto", "via", "sec-ch-ua", "sec-fetch-mode", "sec-fetch-site")
+                "x_forwarded_for", "x-real-ip", "x-forwarded-proto", "via", "sec-ch-ua", "sec-fetch-mode",
+                "sec-fetch-site")
+# where tunnels put the client's address, in the order they are tried (Cloudflare, most proxies, localhost.run)
+CLIENT_HEADERS = ("CF-Connecting-IP", "X-Forwarded-For", "X_Forwarded_For", "X-Real-IP", "Forwarded")
+FORWARDED_FOR = re.compile(r'(?i)\bfor="?([^";,]+)')
 WORDS = ("amber", "basalt", "cedar", "delta", "ember", "fjord", "granite", "harbor", "indigo", "juniper",
          "kestrel", "lagoon", "meadow", "nimbus", "obsidian", "pebble", "quartz", "rowan", "saffron", "tundra",
          "umber", "violet", "willow", "xenon", "yarrow", "zephyr")
@@ -88,8 +95,16 @@ def client_ip(peer: str, headers) -> str:
     except ValueError:
         local = False
     if local:
-        for name in ("CF-Connecting-IP", "X-Forwarded-For"):
+        for name in CLIENT_HEADERS:
             value = (headers.get(name) or "").split(",")[0].strip()
+            if name == "Forwarded":  # RFC 7239: for=203.0.113.7;proto=https or for="[2001:db8::7]:4711"
+                m = FORWARDED_FOR.search(value)
+                value = m.group(1) if m else ""
+            # some tunnels give the client's port too: 203.0.113.7:50412 or [2001:db8::7]:50412
+            if value.startswith("["):
+                value = value[1:].split("]", 1)[0]
+            elif value.count(":") == 1:
+                value = value.split(":", 1)[0]
             try:
                 return str(ipaddress.ip_address(value))
             except ValueError:
@@ -140,6 +155,7 @@ def make_handler(rec: Recorder):
                 "ts": now.isoformat(timespec="seconds"), "rid": rid, "ip": ip, "peer": self.client_address[0],
                 "method": self.command, "path": path, "label": label, "status": status, "word": served_word,
                 "headers": {k: (self.headers.get(k) or "")[:500] for k in KEEP_HEADERS if self.headers.get(k)},
+                "header_names": sorted({k.lower() for k in self.headers.keys()})[:40],
                 "body_len": len(body), "body_sha256": hashlib.sha256(body).hexdigest() if body else ""})
             self.send_response(status)
             self.send_header("Content-Type", ctype)

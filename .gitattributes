@@ -3,3 +3,5 @@
 data/snapshot-2026-10-31/** -text
 data/live/raw/** -text
 tests/fixtures/** -text
+# the captured log is quoted in reports exactly as the server wrote it
+examples/*.log -text

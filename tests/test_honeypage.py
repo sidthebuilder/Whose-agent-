@@ -73,6 +73,14 @@ def test_proxy_headers_are_trusted_only_from_this_machine():
     assert client_ip("::1", {"CF-Connecting-IP": "2001:db8::5"}) == "2001:db8::5"
 
 
+def test_tunnel_headers_with_ports_and_the_forwarded_header():
+    assert client_ip("127.0.0.1", {"X-Forwarded-For": "34.229.10.5:50412"}) == "34.229.10.5"
+    assert client_ip("127.0.0.1", {"X-Forwarded-For": "[2001:db8::7]:50412"}) == "2001:db8::7"
+    assert client_ip("127.0.0.1", {"Forwarded": 'for="[2001:db8::7]:4711";proto=https'}) == "2001:db8::7"
+    assert client_ip("127.0.0.1", {"Forwarded": "for=34.229.10.5;proto=https, for=10.0.0.1"}) == "34.229.10.5"
+    assert client_ip("203.0.113.9", {"Forwarded": "for=34.229.10.5"}) == "203.0.113.9"
+
+
 def test_verification_words_are_stable_per_label(tmp_path):
     a, b = Recorder(tmp_path), Recorder(tmp_path)
     assert a.word("chatgpt") == b.word("chatgpt")

@@ -1,0 +1,5 @@
+32.192.72.106 - - [05/Nov/2026:07:26:19 +0000] "GET /t/spoof HTTP/1.1" 200 967 "-" "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.3; +https://openai.com/gptbot" "-" "6545f58610d3"
+32.192.72.106 - - [05/Nov/2026:07:26:22 +0000] "GET /.env HTTP/1.1" 404 10 "-" "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)" "-" "7555775b404d"
+32.192.72.106 - - [05/Nov/2026:07:26:25 +0000] "GET /t/extended HTTP/1.1" 200 969 "-" "Mozilla/5.0 (compatible; Google-Extended)" "-" "069380efec8a"
+32.192.72.106 - - [05/Nov/2026:07:26:28 +0000] "POST /t/spoof/note HTTP/1.1" 200 80 "-" "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.3; +https://openai.com/gptbot" "-" "3b6ed39f1b0a"
+32.192.72.106 - - [05/Nov/2026:07:26:30 +0000] "GET /t/person HTTP/1.1" 200 968 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" "-" "d8543a4b3d7d"

@@ -1,4 +1,5 @@
-"""A small client for the Switch agent protocol: enough to post into a room and find a room by name.
+"""A small client for the Switch agent protocol, for the log watcher: enough to post into a room and find a room
+by name, without holding the agent's event stream (the agent's own process, `wa.py agent`, holds that).
 
 Credentials are the ones Switch Console writes when it registers an agent, in
 <agent working directory>/.switch/agents/<agent name>.json:
@@ -84,8 +85,17 @@ class SwitchClient:
         return out.get("result") if isinstance(out, dict) and "result" in out else out
 
     def rooms(self) -> list[dict]:
-        """The rooms this agent belongs to, as dicts with at least an id and a name when the server gives them."""
-        out = self.op("list_rooms")
+        """The rooms this agent belongs to, as dicts with at least an id and a name when the server gives them.
+
+        GET /agents/{id}/moderation/rooms answers without an open event stream, so the watcher can use it while
+        the agent's own process holds the agent's connection. Older servers without it get the list_rooms
+        operation, which needs an open connection there."""
+        try:
+            out = self._call("GET", f"/agents/{self.creds.agent_id}/moderation/rooms")
+        except SwitchError as e:
+            if " HTTP 404 " not in f"{e} " and " HTTP 405 " not in f"{e} ":
+                raise
+            out = self.op("list_rooms")
         found: list[dict] = []
 
         def walk(node):

@@ -11,6 +11,7 @@
   approve ID --by NAME     record a person's approval; the person sends the mail
   serve                    run the test page that records real agent traffic
   redact LOG --out FILE    replace undeclared addresses with their network before publishing a log
+  agent ROLE               run one of the room's two agents (egress-check or abuse-writer) on Switch
   rooms, post TEXT         check the connection to Switch
 
 Run it as `python wa.py <command>` from the repository, or as `python ../../wa.py <command>` from an agent's
@@ -362,6 +363,11 @@ def _client(a):
     return SwitchClient(load_credentials(_resolve(a.agent_dir) if a.agent_dir else None, a.agent_name))
 
 
+def cmd_agent(a) -> None:
+    from .agent import main as run_agent
+    run_agent(a.role, a.agent_dir, a.site)
+
+
 def cmd_rooms(a) -> None:
     from .switch import SwitchError
     try:
@@ -450,6 +456,11 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("log")
     s.add_argument("--out", required=True)
     s.set_defaults(func=cmd_redact)
+    s = sub.add_parser("agent", parents=[common], help="run one of the room's agents (connects to Switch)")
+    s.add_argument("role", choices=["egress-check", "abuse-writer"])
+    s.add_argument("--agent-dir", help="the agent's folder with .switch/ credentials (default agents/<role>)")
+    s.add_argument("--site", default="our website", help="the site the reports speak for")
+    s.set_defaults(func=cmd_agent)
     s = sub.add_parser("rooms", parents=[common, switch], help="the Switch rooms an agent is in")
     s.set_defaults(func=cmd_rooms)
     s = sub.add_parser("post", parents=[common, switch], help="post one message to a Switch room")

@@ -22,8 +22,16 @@ class FakeBridge(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    modern = True  # a server with GET /agents/{id}/moderation/rooms (Switch 0.31); False: only the operation
+
     def do_GET(self):
-        self._send(200, {"ok": True}) if self.path == "/health" else self._send(404, {"detail": "no"})
+        FakeBridge.calls.append((self.path, self.headers.get("Authorization"), None))
+        if self.path == "/health":
+            return self._send(200, {"ok": True})
+        if self.path == "/agents/A1/moderation/rooms" and FakeBridge.modern:
+            return self._send(200, {"rooms": [{"id": "r-9", "name": "site-whose-agent", "description": "d"},
+                                              {"id": "r-2", "name": "general", "description": "d"}]})
+        self._send(404, {"detail": "no"})
 
     def do_POST(self):
         n = int(self.headers.get("Content-Length") or 0)
@@ -41,7 +49,7 @@ class FakeBridge(BaseHTTPRequestHandler):
 
 @pytest.fixture
 def bridge():
-    FakeBridge.calls = []
+    FakeBridge.calls, FakeBridge.modern = [], True
     srv = ThreadingHTTPServer(("127.0.0.1", 0), FakeBridge)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     yield f"http://127.0.0.1:{srv.server_address[1]}"
@@ -53,9 +61,16 @@ def test_find_a_room_and_post_to_it(bridge):
     c = SwitchClient(Credentials(bridge, "tok", "A1"))
     assert c.health()
     assert c.find_room("Site-Whose-Agent") == "r-9"
+    assert not any("/ops/" in path for path, _, _ in FakeBridge.calls)  # no operation: needs no open stream
     c.post("r-9", "**Verified** · claims GPTBot (OpenAI)")
     assert FakeBridge.calls[-1] == ("/agents/A1/message", "Bearer tok",
                                     {"room_id": "r-9", "content": "**Verified** · claims GPTBot (OpenAI)"})
+
+
+def test_older_servers_list_rooms_through_the_operation(bridge):
+    FakeBridge.modern = False
+    assert SwitchClient(Credentials(bridge, "tok", "A1")).find_room("site-whose-agent") == "r-9"
+    assert FakeBridge.calls[-1][0] == "/agents/A1/ops/list_rooms"
 
 
 def test_unknown_room_and_bad_token(bridge):
