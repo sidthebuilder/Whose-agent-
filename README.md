@@ -7,6 +7,7 @@ their own mail. No agent can.**
 Built for Flip the Switch (WeMakeDevs × DevTools Academy × Switch, 4 to 7 November 2026), Track 01: Best
 Business Workflow.
 
+- [Demo video](https://youtu.be/sVvUlRgizQg) (2 min 41 s): the room running live in Mattermost
 - [Try it in 2 minutes](#try-it-in-2-minutes): Python only, no accounts
 - [Run the whole room](#run-the-whole-room): Switch, Mattermost and both agents on your machine, with Docker
 - [What the room did on 5 November 2026](#what-the-room-did-on-5-november-2026): real messages from a real run
